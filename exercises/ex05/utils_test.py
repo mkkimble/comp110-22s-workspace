@@ -46,6 +46,21 @@ def test_sub_b_less_than_or_zero() -> None:
     assert sub([10, 20, 30, 40], 1, 0) == []
 
 
+def test_sub_a_is_negative() -> None:
+    """When a is negative."""
+    assert sub([10, 20, 30, 40], -1, 2) == [20, 20]
+
+
+def test_sub_returns_list() -> None:
+    """Returns the correct indices."""
+    assert sub([1, 2, 3, 4], 1, 3) == [2, 3]
+
+
+def test_sub_end_greater_list() -> None:
+    """If end index is greater than len of list."""
+    assert sub([1, 2, 3, 4], 1, 5) == [2, 4]
+
+
 def test_concat() -> None:
     """Testing to add 2nd list to 1st list."""
     assert concat([10, 20], [30, 40]) == [10, 20, 30, 40]

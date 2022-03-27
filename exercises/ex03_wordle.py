@@ -30,11 +30,11 @@ def emojified(guess: str, secret: str) -> str:
             resulting_emoji: str = resulting_emoji + WHITE_BOX
         else: 
             if secret[i] == guess[i]:
-                resulting_emoji: str = resulting_emoji + GREEN_BOX
+                new_emoji: str = resulting_emoji + GREEN_BOX
             else:
-                resulting_emoji: str = resulting_emoji + YELLOW_BOX
+                next_emoji: str = new_emoji + YELLOW_BOX
         i += 1
-    return resulting_emoji
+    return next_emoji
     # now we have a string of emojis
 
 
@@ -58,7 +58,7 @@ def main() -> None:
     # putting all the other functions in this function
     secret_word: str = "codes"
     i: int = 1
-    turn: int = 6
+    turn: int = 7
     while i < turn:
         print(f"=== Turn {i}/6 ===")
         how_long: str = input(f"Enter a {len(secret_word)} character word: ")
@@ -68,10 +68,10 @@ def main() -> None:
             if how_long == secret_word:
                 print(emojified(how_long, secret_word)) 
                 print(f"You won in {i}/6 turns!")
-                exit()
-                
+                return     
         i += 1
     print("X/6 - Sorry, try again tomorrow!")
+    SystemExit: None
 
 
 if __name__ == "__main__":

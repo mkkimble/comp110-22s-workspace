@@ -2,10 +2,10 @@
 
 __author__ = "730244272"
 
-secret_word: str = "python"
+secret_word: str = "sake"
 word_size: int = len(secret_word)
 # instead of using numbers, this will serve as a shortcut for the secret word length. even if changed, the program should modify itself
-guess: str = input(f"W hat is your {word_size}-letter guess? ")
+guess: str = input(f"What is your {word_size}-letter guess? ")
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"

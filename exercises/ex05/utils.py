@@ -14,25 +14,22 @@ def only_evens(xs: list[int]):
     # Should now return all of the even numbers after it goes through the list.
 
 
-def sub(a_list: list[int], a: int, b: int):
+def sub(a_list: list[int], start_index: int, end_index: int):
     """Returning a sublist from the entire list."""
-    # This should return the numbers at the indices wanted.
-    indices = [a_list[a], a_list[b]]
-    if len(a_list) == 0:
+    second_start_index: int = abs(start_index)
+    end_index_two: int = len(a_list)
+
+    if a_list == []:
         return []
+    if start_index < 0 and start_index < end_index and start_index < len(a_list) and end_index > 0:
+        start_index = second_start_index
+        return [a_list[second_start_index], a_list[end_index - 1]]
+    if start_index < end_index and start_index < len(a_list) and end_index > 0:
+        if end_index > len(a_list):
+            end_index = end_index_two
+        return [a_list[second_start_index], a_list[end_index - 1]]
     else:
-        if a > len(a_list):
-            return []
-        else:
-            if a > b:
-                return []
-            else:
-                if a < b:
-                    if b < len(a_list):
-                        if b >= 0:
-                            return indices
-                        else: 
-                            return []
+        return []
 
 
 def concat(one_list: list[int], two_list: list[int]):
